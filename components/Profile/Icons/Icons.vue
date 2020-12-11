@@ -3,10 +3,10 @@
     <div class="icons-label">
       <p>そうび</p>
     </div>
-    <div class='icons-line'>
+    <div class="icons-line">
       <div>
         <div mr-1>
-          <p>E: </p>
+          <p>E:</p>
         </div>
         <div>
           <p class="icons-line-bg">
@@ -14,17 +14,17 @@
               alt="twitter"
               width="100"
               height="100"
-              :src='iconInfo.imgSrc.twitter'
-              :href='iconInfo.linkUrls.twitter'
+              :src="iconInfo.imgSrc.twitter"
+              :href="iconInfo.linkUrls.twitter"
               decoding="async"
               loading="lazy"
-            >
+            />
           </p>
         </div>
       </div>
       <div>
         <div>
-          <p>E: </p>
+          <p>E:</p>
         </div>
         <div>
           <p class="icons-line-bg">
@@ -32,17 +32,17 @@
               alt="github"
               width="100"
               height="100"
-              :src='iconInfo.imgSrc.github'
-              :href='iconInfo.linkUrls.github'
+              :src="iconInfo.imgSrc.github"
+              :href="iconInfo.linkUrls.github"
               decoding="async"
               loading="lazy"
-            >
+            />
           </p>
         </div>
       </div>
       <div>
         <div>
-          <p>E: </p>
+          <p>E:</p>
         </div>
         <div>
           <p class="icons-line-bg">
@@ -50,57 +50,57 @@
               alt="facebook"
               width="100"
               height="100"
-              :src='iconInfo.imgSrc.facebook'
-              :href='iconInfo.linkUrls.facebook'
+              :src="iconInfo.imgSrc.facebook"
+              :href="iconInfo.linkUrls.facebook"
               decoding="async"
               loading="lazy"
-            >
+            />
           </p>
         </div>
       </div>
     </div>
-    <div class='icons-line'>
+    <div class="icons-line">
       <div>
-        <p>E: </p>
+        <p>E:</p>
         <p class="icons-line-bg">
           <img
             alt="speaker-deck"
             width="100"
             height="100"
-            :src='iconInfo.imgSrc.speakerDeck'
-            :href='iconInfo.linkUrls.speakerDeck'
+            :src="iconInfo.imgSrc.speakerDeck"
+            :href="iconInfo.linkUrls.speakerDeck"
             decoding="async"
             loading="lazy"
-          >
+          />
         </p>
       </div>
       <div>
-        <p>E: </p>
+        <p>E:</p>
         <p class="icons-line-bg">
           <img
             alt="hatena"
             width="100"
             height="100"
-            :src='iconInfo.imgSrc.hatena'
-            :href='iconInfo.linkUrls.hatena'
+            :src="iconInfo.imgSrc.hatena"
+            :href="iconInfo.linkUrls.hatena"
             decoding="async"
             loading="lazy"
-          >
+          />
         </p>
       </div>
       <div>
-        <p>E: </p>
+        <p>E:</p>
         <p class="icons-line-bg">
           <img
             class="icons-qiita"
             alt="qiita"
             width="100"
             height="100"
-            :src='iconInfo.imgSrc.qiita'
-            :href='iconInfo.linkUrls.qiita'
+            :src="iconInfo.imgSrc.qiita"
+            :href="iconInfo.linkUrls.qiita"
             decoding="async"
             loading="lazy"
-          >
+          />
         </p>
       </div>
     </div>
@@ -108,31 +108,31 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import iconInfoJson from './icons.json';
+import { Component, Vue } from 'vue-property-decorator'
+import iconInfoJson from './icons.json'
 
 type IconInfo = {
   linkUrls: {
-    twitter: string,
-    github: string,
-    speakerDeck: string,
-    hatena: string,
-    facebook: string,
+    twitter: string
+    github: string
+    speakerDeck: string
+    hatena: string
+    facebook: string
     qiita: string
-  },
+  }
   imgSrc: {
-    twitter: string,
-    github: string,
-    speakerDeck: string,
-    hatena: string,
-    facebook: string,
+    twitter: string
+    github: string
+    speakerDeck: string
+    hatena: string
+    facebook: string
     qiita: string
   }
 }
 
 @Component
 export default class Icons extends Vue {
-  iconInfo: IconInfo = iconInfoJson;
+  iconInfo: IconInfo = iconInfoJson
 }
 </script>
 
@@ -185,7 +185,7 @@ p {
   align-items: center;
 }
 .icons-line img {
-  display:inline-block;
+  display: inline-block;
   width: 100px;
 }
 .icons-qiita {

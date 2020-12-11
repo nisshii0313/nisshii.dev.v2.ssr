@@ -18,26 +18,94 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.jsdelivr.net/npm/destyle.css@2.0.2/destyle.css'},
-      { rel: 'preload', type: 'font/woff2', href: '/font/DQ.woff2'},
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com'},
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ruby_rcedus.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ts_vhckk8.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/vue_hcg62l.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069676/elixir_oadnwd.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/kube_pv6kee.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/react_huyjrw.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/go_eqy1my.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/docker_atu6bp.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/rails_wuuvl3.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069540/twitter_cx3qyc.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069539/aoba_pegfa4.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/facebook_scc9xe.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/qiita_wtznsv.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/speaker-deck_ul68bi.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/github_o0dg95.svg'},
-      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/hatena_nepawz.svg'}
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://cdn.jsdelivr.net/npm/destyle.css@2.0.2/destyle.css',
+      },
+      { rel: 'preload', type: 'font/woff2', href: '/font/DQ.woff2' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ruby_rcedus.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ts_vhckk8.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/vue_hcg62l.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069676/elixir_oadnwd.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/kube_pv6kee.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/react_huyjrw.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/go_eqy1my.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/docker_atu6bp.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/rails_wuuvl3.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069540/twitter_cx3qyc.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069539/aoba_pegfa4.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/facebook_scc9xe.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/qiita_wtznsv.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/speaker-deck_ul68bi.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/github_o0dg95.svg',
+      },
+      {
+        rel: 'prefetch',
+        href:
+          'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/hatena_nepawz.svg',
+      },
     ],
   },
 
@@ -67,22 +135,22 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    treeShake: true
+    treeShake: true,
   },
 
   hooks: {
     // This hook is called before saving the html to flat file
-    'generate:page': page => {
+    'generate:page': (page) => {
       if (page.route === '/amp') {
         page.html = ampify(page.html)
       }
     },
     // This hook is called before serving the html to the browser
-    'render:route': (url, page, { req, res }) => {
+    'render:route': (page) => {
       if (page.route === '/amp') {
         page.html = ampify(page.html)
       }
-    }
+    },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

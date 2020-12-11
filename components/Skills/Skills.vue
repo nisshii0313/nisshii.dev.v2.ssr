@@ -1,17 +1,8 @@
 <template>
   <div class="skills">
-    <v-tabs
-      v-model="tab"
-      vertical
-      hide-slider
-      dark
-      class="skills-tabs"
-    >
-      <v-tab
-        v-for="(i, index) in skillsData.skills"
-        :key="index"
-      >
-        <img 
+    <v-tabs v-model="tab" vertical hide-slider dark class="skills-tabs">
+      <v-tab v-for="(i, index) in skillsData.skills" :key="index">
+        <img
           class="skills-icon-img"
           :src="i.icon"
           :alt="i.name"
@@ -20,11 +11,7 @@
         />
       </v-tab>
     </v-tabs>
-    <v-tabs-items
-      v-model="tab"
-      dark
-      class="skills-details"
-    >
+    <v-tabs-items v-model="tab" dark class="skills-details">
       <v-tab-item
         v-for="(i, index) in skillsData.skills"
         :key="index"
@@ -38,15 +25,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import skillsDataJson from './skills.json';
+import { Component, Vue } from 'vue-property-decorator'
+import skillsDataJson from './skills.json'
 
 export type Skill = {
-  name: string,
-  nameJa: string,
-  type: string,
-  icon: string,
-  description: string,
+  name: string
+  nameJa: string
+  type: string
+  icon: string
+  description: string
   isChara: boolean
 }
 
@@ -56,12 +43,13 @@ type SkillsData = {
 
 @Component({
   components: {
-    Description: () => import('@/components/Skills/Description/Description.vue'),
+    Description: () =>
+      import('@/components/Skills/Description/Description.vue'),
   },
 })
 export default class Skills extends Vue {
-  tab = null;
-  skillsData: SkillsData = skillsDataJson;
+  tab = null
+  skillsData: SkillsData = skillsDataJson
 }
 </script>
 

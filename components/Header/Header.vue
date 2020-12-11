@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class Header extends Vue {}
@@ -32,19 +32,19 @@ export default class Header extends Vue {}
   padding-top: 8px;
   padding-bottom: 8px;
 }
-.header ul{
+.header ul {
   width: 100%;
   list-style: none;
 }
-.header li{
+.header li {
   padding: 0;
   float: left;
   width: 50%;
 }
-.header li p{
+.header li p {
   margin: 8px;
 }
-.header li p:before{
+.header li p:before {
   content: '\00a0\00a0';
   margin-right: 8px;
 }

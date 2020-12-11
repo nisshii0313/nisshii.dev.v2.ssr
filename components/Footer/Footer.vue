@@ -1,30 +1,30 @@
 <template>
   <div class="footer">
-    <p><span class="copyright">&copy;</span> {{ period }} Yuta Imanishi </p>
+    <p><span class="copyright">&copy;</span> {{ period }} Yuta Imanishi</p>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import dayjs from 'dayjs';
+import { Component, Vue } from 'vue-property-decorator'
+import dayjs from 'dayjs'
 
 @Component
 export default class Footer extends Vue {
-  year = dayjs().year();
+  year = dayjs().year()
 
   get period() {
-    let returnPeriod = '2020';
+    let returnPeriod = '2020'
     if (this.year > 2020) {
-      returnPeriod = `2020 - ${this.year}`;
+      returnPeriod = `2020 - ${this.year}`
     }
-    return returnPeriod;
+    return returnPeriod
   }
 }
 </script>
 
 <style scoped>
 .footer {
-  margin-right: 16px
+  margin-right: 16px;
 }
 .copyright {
   font-family: initial;

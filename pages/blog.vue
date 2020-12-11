@@ -1,6 +1,6 @@
 <template>
   <div class="blog-wrapper">
-    <p>かみんぐ  すーん！！！</p>
+    <p>かみんぐ すーん！！！</p>
   </div>
 </template>
 

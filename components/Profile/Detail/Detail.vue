@@ -12,59 +12,67 @@
       <div class="detail-name-age">
         <div class="detail-name">
           <p>
-            {{detailInfo.name}} <br> {{(detailInfo.hn)}}
+            {{ detailInfo.name }} <br />
+            {{ detailInfo.hn }}
           </p>
         </div>
         <div class="detail-age">
           <p>
-            {{detailAge}} <br>
-            {{detailToNextAge}}
+            {{ detailAge }} <br />
+            {{ detailToNextAge }}
           </p>
         </div>
       </div>
     </div>
     <div class="detail-job">
       <p>
-        {{detailInfo.job}} <br>
-        {{(detailInfo.jobDescription)}}
+        {{ detailInfo.job }} <br />
+        {{ detailInfo.jobDescription }}
       </p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import dayjs from 'dayjs';
-import 'dayjs/locale/ja';
-import detail from './detail.json';
+import { Component, Vue } from 'vue-property-decorator'
+import dayjs from 'dayjs'
+import 'dayjs/locale/ja'
+import detail from './detail.json'
 
 type DetailInfo = {
-  name: string,
-  profileImgSrc: string,
-  hn: string,
-  job: string,
+  name: string
+  profileImgSrc: string
+  hn: string
+  job: string
   jobDescription: string
 }
 
-dayjs().locale('ja');
+dayjs().locale('ja')
 
 @Component
 export default class Detail extends Vue {
-  detailInfo: DetailInfo = detail;
+  detailInfo: DetailInfo = detail
 
   get detailAge() {
     import('dayjs').then((dayjs) => {
-      dayjs.locale('ja');
-    });
-    const t = dayjs('1999-03-13T00:00:00');
-    return `Lv：${dayjs().diff(t, 'y')}`;
+      dayjs.locale('ja')
+    })
+    const t = dayjs('1999-03-13T00:00:00')
+    return `Lv：${dayjs().diff(t, 'y')}`
   }
 
   get detailToNextAge() {
     if (dayjs().isBefore(dayjs().month(3).date(13))) {
-      return `次のレベルまで： ${dayjs().diff(dayjs().month(3).date(13), 'd')} 日`;
+      return `次のレベルまで： ${dayjs().diff(
+        dayjs().month(3).date(13),
+        'd'
+      )} 日`
     }
-    return `次のレベルまで： ${dayjs().year(dayjs().year() + 1).month(3).date(13).diff(dayjs(), 'd')} 日`;
+    return `次のレベルまで： ${dayjs()
+      .year(dayjs().year() + 1)
+      .month(3)
+      .date(13)
+      .diff(dayjs(), 'd')} 日`
   }
 }
 </script>

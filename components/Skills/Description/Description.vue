@@ -2,7 +2,7 @@
   <div class="skills-description-wrapper">
     <div class="skills-img">
       <img
-        v-bind:class="{ skills_img_rotate: isChara }"
+        :class="{ skills_img_rotate: isChara }"
         :src="data.icon"
         :alt="data.name"
         width="100px"
@@ -13,33 +13,33 @@
     </div>
     <div class="skills-title">
       <p>なまえ：</p>
-      <p class="skills-contents"> {{data.name}} </p>
+      <p class="skills-contents">{{ data.name }}</p>
     </div>
     <div class="skills-title-ja">
       <p>読み方：</p>
-      <p class="skills-contents"> {{data.nameJa}} </p>
+      <p class="skills-contents">{{ data.nameJa }}</p>
     </div>
     <div class="skills-type">
-      <p>タイプ：<br></p>
-      <p class="skills-contents"> {{data.type}} </p>
+      <p>タイプ：<br /></p>
+      <p class="skills-contents">{{ data.type }}</p>
     </div>
     <div class="skills-description">
-      <p> {{data.description}} </p>
+      <p>{{ data.description }}</p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Skill } from '../Skills.vue';
+import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Skill } from '../Skills.vue'
 
 @Component
 export default class Description extends Vue {
   @Prop({})
-  data!: Skill;
+  data!: Skill
 
   get isChara() {
-    return this.data.isChara;
+    return this.data.isChara
   }
 }
 </script>
@@ -63,8 +63,12 @@ export default class Description extends Vue {
   animation: rotate-anime 0.5s linear infinite;
 }
 @keyframes rotate-anime {
-  0%  {transform: rotate(0);}
-  100%  {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .skills-title {
   display: flex;
