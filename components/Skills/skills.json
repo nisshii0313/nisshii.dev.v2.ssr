@@ -1,0 +1,76 @@
+{
+    "skills": [
+        {
+            "name": "Vue",
+            "nameJa": "びゅー",
+            "type": "フロントエンド",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/vue_hcg62l.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": false
+        },
+        {
+            "name": "React",
+            "nameJa": "りあくと",
+            "type": "フロントエンド",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/react_huyjrw.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": false
+        },
+        {
+            "name": "Typescript",
+            "nameJa": "たいぷすくりぷと",
+            "type": "フロントエンド",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ts_vhckk8.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": false
+        },
+        {
+            "name": "Ruby",
+            "nameJa": "るびー",
+            "type": "バックエンド",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ruby_rcedus.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": false
+        },
+        {
+            "name": "Rails",
+            "nameJa": "れーるず",
+            "type": "バックエンド",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/rails_wuuvl3.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": false
+        },
+        {
+            "name": "Elixir",
+            "nameJa": "えりくさー",
+            "type": "バックエンド",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069676/elixir_oadnwd.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": false
+        },
+        {
+            "name": "Go",
+            "nameJa": "ごー",
+            "type": "バックエンド",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/go_eqy1my.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": true
+        },
+        {
+            "name": "Docker",
+            "nameJa": "どっかー",
+            "type": "クラウドインフラ",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/docker_atu6bp.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": true
+        },
+        {
+            "name": "Kubernetes",
+            "nameJa": "くばねてす",
+            "type": "クラウドインフラ",
+            "icon": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/kube_pv6kee.svg",
+            "description": "ﾁｮｯﾄﾜｶﾙ",
+            "isChara": false
+        }
+    ]
+}

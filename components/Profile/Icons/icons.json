@@ -1,0 +1,18 @@
+{
+    "linkUrls": {
+        "twitter": "https://twitter.com/nisshii0313",
+        "github": "https://github.com/nisshii0313",
+        "speakerDeck": "https://speakerdeck.com/nisshii0313",
+        "hatena": "https://profile.hatena.ne.jp/nisshii18/",
+        "facebook": "https://www.facebook.com/profile.php?id=100018506530777",
+        "qiita": "https://qiita.com/nisshii_Y"
+    },
+    "imgSrc": {
+        "twitter": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069540/twitter_cx3qyc.svg",
+        "github": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/github_o0dg95.svg",
+        "speakerDeck": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/speaker-deck_ul68bi.svg",
+        "hatena": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/hatena_nepawz.svg",
+        "facebook": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/facebook_scc9xe.svg",
+        "qiita": "https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/qiita_wtznsv.svg"
+    }
+}

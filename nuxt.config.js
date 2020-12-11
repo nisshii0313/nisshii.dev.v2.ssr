@@ -1,4 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
+import ampify from './plugins/amplfy.js'
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
@@ -16,7 +16,29 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.jsdelivr.net/npm/destyle.css@2.0.2/destyle.css'},
+      { rel: 'preload', type: 'font/woff2', href: '/font/DQ.woff2'},
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com'},
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ruby_rcedus.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/ts_vhckk8.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069677/vue_hcg62l.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069676/elixir_oadnwd.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/kube_pv6kee.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/react_huyjrw.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/go_eqy1my.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/docker_atu6bp.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069675/rails_wuuvl3.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069540/twitter_cx3qyc.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069539/aoba_pegfa4.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/facebook_scc9xe.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/qiita_wtznsv.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/speaker-deck_ul68bi.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/github_o0dg95.svg'},
+      { rel: 'prefetch', href: 'https://res.cloudinary.com/ddkwdet2n/image/upload/v1607069538/hatena_nepawz.svg'}
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -45,22 +67,27 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
+    treeShake: true
+  },
+
+  hooks: {
+    // This hook is called before saving the html to flat file
+    'generate:page': page => {
+      if (page.route === '/amp') {
+        page.html = ampify(page.html)
+      }
     },
+    // This hook is called before serving the html to the browser
+    'render:route': (url, page, { req, res }) => {
+      if (page.route === '/amp') {
+        page.html = ampify(page.html)
+      }
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    analyze: false,
+    parallel: true,
+  },
 }

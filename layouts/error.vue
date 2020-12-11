@@ -1,42 +1,49 @@
 <template>
-  <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/"> Home page </NuxtLink>
-  </v-app>
+  <div id="app">
+    <Header class="header" />
+    <NotFound />
+    <Footer class="footer" />
+  </div>
 </template>
 
-<script>
-export default {
-  layout: 'empty',
-  props: {
-    error: {
-      type: Object,
-      default: null,
-    },
-  },
-  data() {
-    return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred',
-    }
-  },
-  head() {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title,
-    }
-  },
+<style>
+@font-face {
+  font-family: 'dq';
+  font-display: swap;
+  src: url('/font/DQ.woff2') format('woff2');
 }
-</script>
-
-<style scoped>
-h1 {
-  font-size: 20px;
+body {
+  margin: 0px;
+  background-color: black;
+}
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+p {
+  font-family: 'dq';
+  font-weight: bold;
+  color: whitesmoke;
+}
+.header {
+  margin-bottom: 16px;
+}
+.footer {
+  margin-top: auto;
 }
 </style>
+
+<script>
+export default {};
+</script>
