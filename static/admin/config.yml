@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: nisshii0313/nisshii.dev.v2.ssg
+  branch: master
+
+publish_mode: editorial_workflow
+
+media_folder: "static/images/uploads"
+public_folder: "../../../images"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content"
+    create: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "date",format: "YYYY-MM-DD"}
+      - {label: "Modified", name: "modified", widget: "string", required: false}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "tag", name: "tag", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Related", name: "related_post", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}

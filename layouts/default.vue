@@ -5,23 +5,29 @@
     <Footer class="footer" />
   </div>
 </template>
-
-<style>
-@font-face {
-  font-family: 'dq';
-  font-display: swap;
-  src: url('/font/DQ.woff2') format('woff2');
+<script>
+export default {
+  computed: {
+    currentPageForCanonical() {
+      return this.$route.path.slice(1)
+    },
+  },
+  head() {
+    return {
+      link: [
+        {
+          rel: 'canonical',
+          href: `${process.env.BASE_URL}${this.currentPageForCanonical}`,
+        },
+      ],
+    }
+  },
 }
+</script>
+<style>
 body {
   margin: 0px;
   background-color: black;
-}
-img {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-user-drag: none;
 }
 #app {
   display: flex;
@@ -30,11 +36,6 @@ img {
   max-width: 600px;
   width: 100%;
   margin: auto;
-}
-p {
-  font-family: 'dq';
-  font-weight: bold;
-  color: whitesmoke;
 }
 .header {
   margin-bottom: 16px;

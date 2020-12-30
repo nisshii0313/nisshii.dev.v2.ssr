@@ -9,17 +9,19 @@
           <p>E:</p>
         </div>
         <div>
-          <p class="icons-line-bg">
+          <a
+            class="icons-line-bg"
+            :href="iconInfo.linkUrls.twitter"
+          >
             <img
               alt="twitter"
               width="100"
               height="100"
               :src="iconInfo.imgSrc.twitter"
-              :href="iconInfo.linkUrls.twitter"
               decoding="async"
               loading="lazy"
             />
-          </p>
+          </a>
         </div>
       </div>
       <div>
@@ -27,17 +29,19 @@
           <p>E:</p>
         </div>
         <div>
-          <p class="icons-line-bg">
+          <a
+            class="icons-line-bg"
+            :href="iconInfo.linkUrls.github"
+          >
             <img
               alt="github"
               width="100"
               height="100"
               :src="iconInfo.imgSrc.github"
-              :href="iconInfo.linkUrls.github"
               decoding="async"
               loading="lazy"
             />
-          </p>
+          </a>
         </div>
       </div>
       <div>
@@ -45,63 +49,71 @@
           <p>E:</p>
         </div>
         <div>
-          <p class="icons-line-bg">
+          <a
+            class="icons-line-bg"
+            :href="iconInfo.linkUrls.facebook"
+          >
             <img
               alt="facebook"
               width="100"
               height="100"
               :src="iconInfo.imgSrc.facebook"
-              :href="iconInfo.linkUrls.facebook"
               decoding="async"
               loading="lazy"
             />
-          </p>
+          </a>
         </div>
       </div>
     </div>
     <div class="icons-line">
       <div>
         <p>E:</p>
-        <p class="icons-line-bg">
+        <a 
+          class="icons-line-bg"
+          :href="iconInfo.linkUrls.speakerDeck"
+        >
           <img
             alt="speaker-deck"
             width="100"
             height="100"
             :src="iconInfo.imgSrc.speakerDeck"
-            :href="iconInfo.linkUrls.speakerDeck"
             decoding="async"
             loading="lazy"
           />
-        </p>
+        </a>
       </div>
       <div>
         <p>E:</p>
-        <p class="icons-line-bg">
+        <a
+          class="icons-line-bg"
+          :href="iconInfo.linkUrls.hatena"
+        >
           <img
             alt="hatena"
             width="100"
             height="100"
             :src="iconInfo.imgSrc.hatena"
-            :href="iconInfo.linkUrls.hatena"
             decoding="async"
             loading="lazy"
           />
-        </p>
+        </a>
       </div>
       <div>
         <p>E:</p>
-        <p class="icons-line-bg">
+        <a
+          class="icons-line-bg"
+          :href="iconInfo.linkUrls.qiita"
+        >
           <img
             class="icons-qiita"
             alt="qiita"
             width="100"
             height="100"
             :src="iconInfo.imgSrc.qiita"
-            :href="iconInfo.linkUrls.qiita"
             decoding="async"
             loading="lazy"
           />
-        </p>
+        </a>
       </div>
     </div>
   </div>

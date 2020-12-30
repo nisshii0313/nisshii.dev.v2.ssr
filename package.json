@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.2",
     "core-js": "^3.6.5",
     "dayjs": "^1.8.31",
     "dotenv": "^8.2.0",
-    "nuxt": "^2.14.6",
+    "netlify-cms-app": "^2.14.8",
+    "nuxt": "^2.14.11",
     "nuxt-generate-cluster": "^2.7.0",
     "nuxt-property-decorator": "^2.8.8",
     "vue-svg-loader": "^0.16.0"

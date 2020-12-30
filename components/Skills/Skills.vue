@@ -1,26 +1,35 @@
 <template>
   <div class="skills">
-    <v-tabs v-model="tab" vertical hide-slider dark class="skills-tabs">
-      <v-tab v-for="(i, index) in skillsData.skills" :key="index">
+    <div
+      v-for="(i, index) in skillsData.skills"
+      :key="index"
+      :class="[{ 'skills-img-position': index%2===1 }, 'skills-description-wrapper']"
+    >
+      <div class="skills-img">
         <img
-          class="skills-icon-img"
+          :class="{ skills_img_rotate: i.isChara }"
           :src="i.icon"
           :alt="i.name"
+          width="100px"
+          height="100px"
           decoding="async"
           loading="lazy"
         />
-      </v-tab>
-    </v-tabs>
-    <v-tabs-items v-model="tab" dark class="skills-details">
-      <v-tab-item
-        v-for="(i, index) in skillsData.skills"
-        :key="index"
-        :transition="false"
-        :reverse-transition="false"
-      >
-        <Description :data="i" />
-      </v-tab-item>
-    </v-tabs-items>
+      </div>
+      <div class="skills-detail">
+        <div class="skills-title">
+          <p>なまえ：</p>
+          <p class="skills-contents">{{ i.name }}</p>
+        </div>
+        <div class="skills-title-ja">
+          <p>読み方：</p>
+          <p class="skills-contents">{{ i.nameJa }}</p>
+        </div>
+        <div class="skills-description">
+          <p>{{ i.description }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,7 +40,6 @@ import skillsDataJson from './skills.json'
 export type Skill = {
   name: string
   nameJa: string
-  type: string
   icon: string
   description: string
   isChara: boolean
@@ -41,12 +49,7 @@ type SkillsData = {
   skills: Skill[]
 }
 
-@Component({
-  components: {
-    Description: () =>
-      import('@/components/Skills/Description/Description.vue'),
-  },
-})
+@Component
 export default class Skills extends Vue {
   tab = null
   skillsData: SkillsData = skillsDataJson
@@ -56,62 +59,63 @@ export default class Skills extends Vue {
 <style scoped>
 .skills {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
   margin-left: 40px;
   margin-bottom: 40px;
 }
-.skills-tabs {
-  max-width: 100px;
-  border-radius: 15px;
-  margin-right: 16px;
-}
-.skills-icon {
+.skills-description-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: white;
-  border-radius: 50%;
+  justify-content: space-between;
+  margin-right: 8px;
+  margin-left: 8px;
 }
-.skills-icon-img {
+.skills-img-position {
+  flex-flow: row-reverse;
+}
+.skills-img {
+  margin-bottom: 16px;
+  padding-bottom: 100%;
+}
+.skills-img img {
+  object-fit: contain;
+}
+.skills_img_rotate:hover {
+  animation: rotate-anime 0.5s linear infinite;
+}
+@keyframes rotate-anime {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.skills-detail {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  opacity: 0.5;
+  flex-direction: column;
 }
-.skills-details {
-  border-radius: 15px;
-  width: 100%;
+.skills-title {
+  display: flex;
 }
-.v-tab {
-  margin-bottom: 32px;
+.skills-title-ja {
+  display: flex;
 }
-.v-tab--active::before {
-  opacity: 0 !important;
+.skills-description {
+  display: flex;
+  margin-top: 16px;
 }
-.v-tab--active img {
-  opacity: 1 !important;
+.skills-column {
+  font-size: 16px;
+}
+.skills-contents {
+  margin-left: 8px;
 }
 @media screen and (max-width: 500px) {
   .skills {
     margin-right: 16px;
     margin-left: 16px;
   }
-}
-</style>
-<style>
-.v-slide-group__wrapper {
-  padding-top: 32px;
-}
-.v-slide-group__content {
-  width: 100%;
-  height: calc(100vh - 150px);
-  overflow: scroll;
-}
-.v-window__container {
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 </style>

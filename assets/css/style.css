@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'dq';
+  font-display: swap;
+  src: url('/font/DQ.woff2') format('woff2');
+}
+p {
+  font-family: 'dq';
+  font-weight: bold;
+  color: whitesmoke;
+}
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}

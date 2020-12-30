@@ -1,9 +1,6 @@
 import ampify from './plugins/amplfy.js'
 
 export default {
-  // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-  ssr: false,
-
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
@@ -14,16 +11,28 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'NisshiiのNisshiiによるNisshiiのためのボートフォリオサイト兼ブログ',
+      },
     ],
     link: [
+      { hid: 'canonical', rel: 'canonical', href: process.env.BASE_URL },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         type: 'text/css',
         href: 'https://cdn.jsdelivr.net/npm/destyle.css@2.0.2/destyle.css',
       },
-      { rel: 'preload', type: 'font/woff2', href: '/font/DQ.woff2' },
+      {
+        rel: 'preload',
+        type: 'font/woff2',
+        as: 'font',
+        href: '/font/DQ.woff2',
+        crossOrigin: 'anonymous',
+      },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
@@ -130,27 +139,29 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
+    loader: {
+      registerStylesSSR: true,
+    },
   },
 
   hooks: {
-    // This hook is called before saving the html to flat file
-    'generate:page': (page) => {
-      if (page.route === '/amp') {
-        page.html = ampify(page.html)
-      }
+    'generate:page': page => {
+      page.html = ampify(page.html)
     },
-    // This hook is called before serving the html to the browser
-    'render:route': (page) => {
-      if (page.route === '/amp') {
-        page.html = ampify(page.html)
-      }
-    },
+    'render:route': (url, page) => {
+      page.html = ampify(page.html)
+    }
+  },
+
+  generate: {
+    subFolders: false,
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
