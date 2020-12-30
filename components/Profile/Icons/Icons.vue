@@ -9,10 +9,7 @@
           <p>E:</p>
         </div>
         <div>
-          <a
-            class="icons-line-bg"
-            :href="iconInfo.linkUrls.twitter"
-          >
+          <a class="icons-line-bg" :href="iconInfo.linkUrls.twitter">
             <img
               alt="twitter"
               width="100"
@@ -29,10 +26,7 @@
           <p>E:</p>
         </div>
         <div>
-          <a
-            class="icons-line-bg"
-            :href="iconInfo.linkUrls.github"
-          >
+          <a class="icons-line-bg" :href="iconInfo.linkUrls.github">
             <img
               alt="github"
               width="100"
@@ -49,10 +43,7 @@
           <p>E:</p>
         </div>
         <div>
-          <a
-            class="icons-line-bg"
-            :href="iconInfo.linkUrls.facebook"
-          >
+          <a class="icons-line-bg" :href="iconInfo.linkUrls.facebook">
             <img
               alt="facebook"
               width="100"
@@ -68,10 +59,7 @@
     <div class="icons-line">
       <div>
         <p>E:</p>
-        <a 
-          class="icons-line-bg"
-          :href="iconInfo.linkUrls.speakerDeck"
-        >
+        <a class="icons-line-bg" :href="iconInfo.linkUrls.speakerDeck">
           <img
             alt="speaker-deck"
             width="100"
@@ -84,10 +72,7 @@
       </div>
       <div>
         <p>E:</p>
-        <a
-          class="icons-line-bg"
-          :href="iconInfo.linkUrls.hatena"
-        >
+        <a class="icons-line-bg" :href="iconInfo.linkUrls.hatena">
           <img
             alt="hatena"
             width="100"
@@ -100,10 +85,7 @@
       </div>
       <div>
         <p>E:</p>
-        <a
-          class="icons-line-bg"
-          :href="iconInfo.linkUrls.qiita"
-        >
+        <a class="icons-line-bg" :href="iconInfo.linkUrls.qiita">
           <img
             class="icons-qiita"
             alt="qiita"

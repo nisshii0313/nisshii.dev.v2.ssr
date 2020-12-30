@@ -139,7 +139,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
@@ -152,12 +152,12 @@ export default {
   },
 
   hooks: {
-    'generate:page': page => {
+    'generate:page': (page) => {
       page.html = ampify(page.html)
     },
-    'render:route': (url, page) => {
+    'render:route': (_url, page) => {
       page.html = ampify(page.html)
-    }
+    },
   },
 
   generate: {

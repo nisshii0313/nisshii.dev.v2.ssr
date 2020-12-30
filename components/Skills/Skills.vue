@@ -3,7 +3,10 @@
     <div
       v-for="(i, index) in skillsData.skills"
       :key="index"
-      :class="[{ 'skills-img-position': index%2===1 }, 'skills-description-wrapper']"
+      :class="[
+        { 'skills-img-position': index % 2 === 1 },
+        'skills-description-wrapper',
+      ]"
     >
       <div class="skills-img">
         <img
