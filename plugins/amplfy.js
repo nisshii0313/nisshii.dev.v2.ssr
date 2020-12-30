@@ -34,6 +34,9 @@ module.exports = (html) => {
   })
   html = html.replace('</title>', `</title>${baseTag}`)
 
+  // preloadとprefetchタグを消す
+  html = html.replace(/<link[^>]*href=(?="\/_nuxt\/)[^>]*>/gi, '')
+
   // ld+json以外のJSを消す
   html = html.replace(
     /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
