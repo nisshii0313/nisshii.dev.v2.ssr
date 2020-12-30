@@ -1,6 +1,8 @@
 const ampBoilerplate =
   '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>'
 const fs = require('fs')
+const AmpOptimizer = require('@ampproject/toolbox-optimizer');
+const ampOptimizer = AmpOptimizer.create();
 
 module.exports = (html) => {
   // CSSを一つのstyleタグにまとめる
@@ -33,9 +35,6 @@ module.exports = (html) => {
     return ''
   })
   html = html.replace('</title>', `</title>${baseTag}`)
-
-  // preloadとprefetchタグを消す
-  html = html.replace(/<link[^>]*rel="(?:preload|prefetch)?"[^>]*>/gi, '')
 
   // ld+json以外のJSを消す
   html = html.replace(
