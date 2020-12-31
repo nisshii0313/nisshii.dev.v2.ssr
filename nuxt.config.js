@@ -19,7 +19,7 @@ export default {
       },
     ],
     link: [
-      { hid: 'canonical', rel: 'canonical', href: process.env.BASE_URL },
+      { hid: 'canonical', rel: 'canonical', href: process.env.VUE_BASE_URL },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         hid: 'destyle',

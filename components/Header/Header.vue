@@ -1,28 +1,30 @@
 <template>
-  <div class="header">
-    <ul class="mt0">
-      <li>
-        <NuxtLink to="/" class="mb1">
-          <p>ステータス</p>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/history" class="mb1">
-          <p>りれき</p>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/skills">
-          <p>スキル</p>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/blog">
-          <p>ぼうけんの書</p>
-        </NuxtLink>
-      </li>
-    </ul>
-  </div>
+  <nav role="navigation">
+    <div class="header">
+      <ul class="mt0">
+        <li>
+          <NuxtLink to="/" class="mb1">
+            <p>ステータス</p>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/history" class="mb1">
+            <p>りれき</p>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/skills">
+            <p>スキル</p>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/blog">
+            <p>ぼうけんの書</p>
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
