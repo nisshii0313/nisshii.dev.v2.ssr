@@ -48,7 +48,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
 export default class BlogList extends Vue {
   head() {
     return {
-      title: 'nisshiiのブログ',
+      title: 'にっしーのブログ',
       meta: [
         {
           hid: 'description',
@@ -56,7 +56,7 @@ export default class BlogList extends Vue {
           content: '徒然なるままに日暮らす',
         },
         { hid: 'og:type', property: 'og:type', content: 'article' },
-        { hid: 'og:title', property: 'og:title', content: 'nisshiiのブログ' },
+        { hid: 'og:title', property: 'og:title', content: 'にっしーのブログ' },
         {
           hid: 'og:description',
           property: 'og:description',
@@ -66,6 +66,11 @@ export default class BlogList extends Vue {
           hid: 'og:url',
           property: 'og:url',
           content: process.env.VUE_BASE_URL + '/blog',
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: process.env.VUE_BASE_URL + '/blog.png',
         },
       ],
     }

@@ -38,7 +38,7 @@ export default class BlogArticle extends Vue {
         {
           hid: 'description',
           name: 'description',
-          content: this.$data.article.title + '|nisshiiのブログ',
+          content: this.$data.article.title + ' | にっしーのブログ',
         },
         { hid: 'og:type', property: 'og:type', content: 'article' },
         {
@@ -49,7 +49,7 @@ export default class BlogArticle extends Vue {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.$data.article.title + '|nisshiiのブログ',
+          content: this.$data.article.title + ' | にっしーのブログ',
         },
         {
           hid: 'og:url',
