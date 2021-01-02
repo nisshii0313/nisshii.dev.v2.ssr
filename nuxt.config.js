@@ -2,12 +2,11 @@ import ampify from './plugins/amplfy.js'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
-  target: 'static',
+  mode: 'universal',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - nisshii.dev.v2',
-    title: 'nisshii.dev.v2',
+    title: 'nisshii.dev',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -34,11 +33,6 @@ export default {
         as: 'font',
         href: '/font/DQ.woff2',
         crossOrigin: 'anonymous',
-      },
-      { 
-        hid: 'googlefont',
-        rel: 'preconnect',
-        href: 'https://fonts.googleapis.com',
       },
       {
         hid: 'ruby-icon',
@@ -140,7 +134,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['@/assets/css/style.css',],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -152,8 +146,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -161,21 +153,13 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
+    '@nuxt/content',
   ],
 
-  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    treeShake: true,
-    loader: {
-      registerStylesSSR: true,
-    },
-  },
-
   hooks: {
-    'generate:page': (page) => {
-      page.html = ampify(page.html)
-    },
+    // 'generate:page': ({ _route, _path, html }) => {
+    //   html = ampify(html)
+    // },
     'render:route': (_url, page) => {
       page.html = ampify(page.html)
     },

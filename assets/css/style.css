@@ -3,10 +3,13 @@
   font-display: swap;
   src: url('/font/DQ.woff2') format('woff2');
 }
-p {
+p, h1, h2, h3, h4, h5, li {
   font-family: 'dq';
   font-weight: bold;
   color: whitesmoke;
+}
+a {
+  text-decoration: none;
 }
 img {
   -moz-user-select: none;
@@ -14,4 +17,5 @@ img {
   -ms-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
+  width: 100%;
 }

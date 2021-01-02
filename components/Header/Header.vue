@@ -1,37 +1,55 @@
 <template>
-  <nav role="navigation">
-    <div class="header">
-      <ul class="mt0">
-        <li>
-          <NuxtLink to="/" class="mb1">
-            <p>ステータス</p>
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/history" class="mb1">
-            <p>りれき</p>
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/skills">
-            <p>スキル</p>
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/blog">
-            <p>ぼうけんの書</p>
-          </NuxtLink>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="header">
+    <ul>
+      <li>
+        <NuxtLink to="/">
+          <p>{{ cursorStatus }}ステータス</p>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/history">
+          <p>{{ cursorHistory }}りれき</p>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/skills">
+          <p>{{ cursorSkills }}スキル</p>
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/blog">
+          <p>{{ cursorBlog }}ぼうけんの書</p>
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class Header extends Vue {}
+export default class Header extends Vue {
+  get cursorStatus() {
+    const cursor = this.$route.path === '/' ? '▶︎' : '　'
+    return cursor
+  }
+
+  get cursorHistory() {
+    const cursor = this.$route.path === '/history' ? '▶︎' : '　'
+    return cursor
+  }
+
+  get cursorSkills() {
+    const cursor = this.$route.path === '/skills' ? '▶︎' : '　'
+    return cursor
+  }
+
+  get cursorBlog() {
+    const cursor = this.$route.path.includes('/blog') ? '▶' : '　'
+    return cursor
+  }
+}
 </script>
 
 <style scoped>
@@ -45,6 +63,8 @@ export default class Header extends Vue {}
 .header ul {
   width: 100%;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .header li {
   padding: 0;
@@ -55,11 +75,6 @@ export default class Header extends Vue {}
   margin: 8px;
 }
 .header li p:before {
-  content: '\00a0\00a0';
   margin-right: 8px;
-}
-.router-link-exact-active p:before {
-  content: '▶︎' !important;
-  margin-right: 4px;
 }
 </style>
