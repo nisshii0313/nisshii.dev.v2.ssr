@@ -1,13 +1,12 @@
 <template>
   <div class="skills">
-    <div
-      v-for="(i, index) in skillsData.skills"
-      :key="index"
-    >
-      <div :class="[
-        { 'skills-img-position': index % 2 === 1 },
-        'skills-description-wrapper',
-      ]">
+    <div v-for="(i, index) in skillsData.skills" :key="index">
+      <div
+        :class="[
+          { 'skills-img-position': index % 2 === 1 },
+          'skills-description-wrapper',
+        ]"
+      >
         <div class="skills-img">
           <img
             :class="{ skills_img_rotate: i.isChara }"

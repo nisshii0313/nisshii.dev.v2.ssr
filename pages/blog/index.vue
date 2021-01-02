@@ -37,35 +37,47 @@
 }
 .blog-card img {
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px; 
+  border-top-right-radius: 10px;
 }
 </style>
 
-<script lang='ts'>
+<script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import { Context } from '@nuxt/types'
 
 @Component
 export default class BlogList extends Vue {
   head() {
-    return { 
-      title: "nisshiiのブログ" ,
+    return {
+      title: 'nisshiiのブログ',
       meta: [
-        { hid: 'description', name: 'description', content: "徒然なるままに日暮らす" },
+        {
+          hid: 'description',
+          name: 'description',
+          content: '徒然なるままに日暮らす',
+        },
         { hid: 'og:type', property: 'og:type', content: 'article' },
-        { hid: 'og:title', property: 'og:title', content: "nisshiiのブログ" },
-        { hid: 'og:description', property: 'og:description', content: "徒然なるままに日暮らす" },
-        { hid: 'og:url', property: 'og:url', content: process.env.VUE_BASE_URL + '/blog'},
+        { hid: 'og:title', property: 'og:title', content: 'nisshiiのブログ' },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: '徒然なるままに日暮らす',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: process.env.VUE_BASE_URL + '/blog',
+        },
       ],
     }
   }
+
   async asyncData({ $content, params }: any) {
     const articles = await $content('articles', params.slug)
       .only(['title', 'slug', 'body'])
       .sortBy('createdAt', 'asc')
       .fetch()
     return {
-      articles
+      articles,
     }
   }
 }

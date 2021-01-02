@@ -34,7 +34,7 @@ export default {
         href: '/font/DQ.woff2',
         crossOrigin: 'anonymous',
       },
-      { 
+      {
         hid: 'googlefont',
         rel: 'preconnect',
         href: 'https://fonts.googleapis.com',

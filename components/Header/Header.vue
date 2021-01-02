@@ -31,20 +31,23 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component
 export default class Header extends Vue {
   get cursorStatus() {
-    const cursor = this.$route.path === "/" ? "▶︎" : "　";
-    return cursor;
+    const cursor = this.$route.path === '/' ? '▶︎' : '　'
+    return cursor
   }
+
   get cursorHistory() {
-    const cursor = this.$route.path === "/history" ? "▶︎" : "　";
-    return cursor;
+    const cursor = this.$route.path === '/history' ? '▶︎' : '　'
+    return cursor
   }
+
   get cursorSkills() {
-    const cursor = this.$route.path === "/skills" ? "▶︎" : "　";
-    return cursor;
+    const cursor = this.$route.path === '/skills' ? '▶︎' : '　'
+    return cursor
   }
+
   get cursorBlog() {
-    const cursor = this.$route.path.includes("/blog") ? "▶" : "　";
-    return cursor;
+    const cursor = this.$route.path.includes('/blog') ? '▶' : '　'
+    return cursor
   }
 }
 </script>
