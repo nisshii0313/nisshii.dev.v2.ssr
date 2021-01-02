@@ -4,7 +4,7 @@ date: 2021-01-03
 category: ポエム
 tag: ポエム
 slug: new_year_2021
-related_post: akabeko
+related_post: ""
 ---
 ![](../../../images/akabeko.png)
 
