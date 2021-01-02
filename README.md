@@ -1,4 +1,4 @@
-# nisshii.dev.v2
+# nisshii.dev
 
 ## Build Setup
 

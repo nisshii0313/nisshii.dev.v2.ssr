@@ -2,11 +2,11 @@ import ampify from './plugins/amplfy.js'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
-  target: 'static',
+  mode: 'universal',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'nisshii.dev.v2',
+    title: 'nisshii.dev',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -156,18 +156,10 @@ export default {
     '@nuxt/content',
   ],
 
-  // content: {
-  //   markdown: {
-  //     prism: {
-  //       theme: 'prism-themes/themes/prism-material-oceanic.css'
-  //     }
-  //   }
-  // },
-
   hooks: {
-    'generate:page': (page) => {
-      page.html = ampify(page.html)
-    },
+    // 'generate:page': ({ _route, _path, html }) => {
+    //   html = ampify(html)
+    // },
     'render:route': (_url, page) => {
       page.html = ampify(page.html)
     },
