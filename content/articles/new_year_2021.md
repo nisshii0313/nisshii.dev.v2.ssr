@@ -6,7 +6,7 @@ tag: ポエム
 slug: new_year_2021
 related_post: ""
 ---
-![akabeko](../../../images/akabeko.png)
+![akabeko](../../../images/uploads/akabeko.png)
 
 ## 目次
 

@@ -37,9 +37,6 @@ module.exports = (html) => {
   // preloadとprefetchタグを消す
   html = html.replace(/<link[^>]*rel="(?:preload|prefetch)?"[^>]*>/gi, '')
 
-  // vuetify付属のrobotoを消す
-  html = html.replace(/<link[^>]*href=(=?"https:\/\/fonts.googleapis.com)[^>]*>/gi, '')
-
   // ld+json以外のJSを消す
   html = html.replace(
     /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,

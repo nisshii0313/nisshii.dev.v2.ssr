@@ -6,7 +6,6 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - nisshii.dev.v2',
     title: 'nisshii.dev.v2',
     meta: [
       { charset: 'utf-8' },
@@ -152,8 +151,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -161,16 +158,16 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
+    '@nuxt/content',
   ],
 
-  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    treeShake: true,
-    loader: {
-      registerStylesSSR: true,
-    },
-  },
+  // content: {
+  //   markdown: {
+  //     prism: {
+  //       theme: 'prism-themes/themes/prism-material-oceanic.css'
+  //     }
+  //   }
+  // },
 
   hooks: {
     'generate:page': (page) => {

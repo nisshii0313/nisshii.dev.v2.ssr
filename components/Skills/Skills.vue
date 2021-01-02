@@ -3,34 +3,35 @@
     <div
       v-for="(i, index) in skillsData.skills"
       :key="index"
-      :class="[
+    >
+      <div :class="[
         { 'skills-img-position': index % 2 === 1 },
         'skills-description-wrapper',
-      ]"
-    >
-      <div class="skills-img">
-        <img
-          :class="{ skills_img_rotate: i.isChara }"
-          :src="i.icon"
-          :alt="i.name"
-          width="100px"
-          height="100px"
-          decoding="async"
-          loading="lazy"
-        />
+      ]">
+        <div class="skills-img">
+          <img
+            :class="{ skills_img_rotate: i.isChara }"
+            :src="i.icon"
+            :alt="i.name"
+            width="100px"
+            height="100px"
+            decoding="async"
+            loading="lazy"
+          />
+        </div>
+        <div class="skills-detail">
+          <div class="skills-title">
+            <p>なまえ：</p>
+            <p class="skills-contents">{{ i.name }}</p>
+          </div>
+          <div class="skills-title-ja">
+            <p>読み方：</p>
+            <p class="skills-contents">{{ i.nameJa }}</p>
+          </div>
+        </div>
       </div>
-      <div class="skills-detail">
-        <div class="skills-title">
-          <p>なまえ：</p>
-          <p class="skills-contents">{{ i.name }}</p>
-        </div>
-        <div class="skills-title-ja">
-          <p>読み方：</p>
-          <p class="skills-contents">{{ i.nameJa }}</p>
-        </div>
-        <div class="skills-description">
-          <p>{{ i.description }}</p>
-        </div>
+      <div class="skills-description">
+        <p>{{ i.description }}</p>
       </div>
     </div>
   </div>
@@ -73,13 +74,10 @@ export default class Skills extends Vue {
   justify-content: space-between;
   margin-right: 8px;
   margin-left: 8px;
+  margin-bottom: 8px;
 }
 .skills-img-position {
   flex-flow: row-reverse;
-}
-.skills-img {
-  margin-bottom: 16px;
-  padding-bottom: 100%;
 }
 .skills-img img {
   object-fit: contain;
@@ -106,8 +104,12 @@ export default class Skills extends Vue {
   display: flex;
 }
 .skills-description {
-  display: flex;
-  margin-top: 16px;
+  border: solid 3px whitesmoke;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin-bottom: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .skills-column {
   font-size: 16px;
