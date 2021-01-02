@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article v-if="article">
     <div class="blog-title">
       <div>
         <h1>{{ article.title }}</h1>
@@ -55,12 +55,12 @@ export default class BlogArticle extends Vue {
           hid: 'og:url',
           property: 'og:url',
           content:
-            process.env.VUE_BASE_URL + '/blog/' + this.$data.article.slug + '/',
+            "https://nisshii.dev" + '/blog/' + this.$data.article.slug + '/',
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: (this.$data.article.body.children[0].children[0].props.src).replace("../../..", process.env.VUE_BASE_URL),
+          content: (this.$data.article.body.children[0].children[0].props.src).replace("../../..", "https://clever-keller-803e9b.netlify.app"),
         },
       ],
     }

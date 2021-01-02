@@ -1,5 +1,7 @@
 <template>
-  <div class="history"></div>
+  <div class="history">
+    <p> そのうち書く </p>
+  </div>
 </template>
 
 <script lang="ts">

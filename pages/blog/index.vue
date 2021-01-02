@@ -65,12 +65,12 @@ export default class BlogList extends Vue {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: process.env.VUE_BASE_URL + '/blog',
+          content: 'https://nisshii.dev/blog',
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: process.env.VUE_BASE_URL + '/blog.png',
+          content: 'https://clever-keller-803e9b.netlify.app/blog.png',
         },
       ],
     }
