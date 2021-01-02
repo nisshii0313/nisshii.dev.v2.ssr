@@ -73,7 +73,7 @@ slug: new_year_2021
 
 ## 最後に
 
-最後に、2021年冬クールの注目作品を挙げて終わります。
+最後に、2021年冬クールの個人的注目作品を挙げて終わります。
 
 #### [五等分の花嫁∬](https://www.tbs.co.jp/anime/5hanayome/)
 #### [のんのんびより のんすとっぷ](https://nonnontv.com/tvanime/)
