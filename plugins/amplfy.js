@@ -1,6 +1,5 @@
 const ampBoilerplate =
   '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>'
-const fs = require('fs')
 
 module.exports = (html) => {
   // CSSを一つのstyleタグにまとめる
@@ -9,12 +8,9 @@ module.exports = (html) => {
     styleConcat += main
     return ''
   })
-
-  // 共有CSSを最後に追加
-  const globalStyle = fs.readFileSync('assets/css/style.css', 'utf8')
   html = html.replace(
     '</head>',
-    `<style amp-custom>${styleConcat}${globalStyle}</style></head>`
+    `<style amp-custom>${styleConcat}</style></head>`
   )
 
   // charsetを消す

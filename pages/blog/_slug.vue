@@ -60,7 +60,7 @@ export default class BlogArticle extends Vue {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.$data.article.body.children[0].children[0].props.src,
+          content: (this.$data.article.body.children[0].children[0].props.src).replace("../../..", process.env.VUE_BASE_URL),
         },
       ],
     }

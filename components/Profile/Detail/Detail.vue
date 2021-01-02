@@ -66,7 +66,7 @@ export default class Detail extends Vue {
       return `次のレベルまで： ${dayjs().diff(
         dayjs().month(3).date(13),
         'd'
-      )} 日`
+      ) * -1} 日`
     }
     return `次のレベルまで： ${dayjs()
       .year(dayjs().year() + 1)
