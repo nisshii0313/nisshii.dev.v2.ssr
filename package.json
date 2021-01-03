@@ -26,6 +26,7 @@
     "nuxt-generate-cluster": "^2.7.0",
     "nuxt-property-decorator": "^2.8.8",
     "prism-themes": "^1.5.0",
+    "reading-time": "^1.2.1",
     "vue-svg-loader": "^0.16.0"
   },
   "devDependencies": {

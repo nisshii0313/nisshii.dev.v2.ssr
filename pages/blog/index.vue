@@ -5,8 +5,13 @@
       <li v-for="article of articles" :key="article.slug">
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
           <div class="blog-card">
-            <img :src="article.body.children[0].children[0].props.src" />
+            <img
+              width="1000"
+              height="1000"
+              :src="article.body.children[0].children[0].props.src"
+            />
             <h2>{{ article.title }}</h2>
+            <p>{{ date(article.createdAt) }} | {{ article.readingTime }}</p>
           </div>
         </NuxtLink>
       </li>
@@ -24,10 +29,10 @@
 }
 .blog-list {
   list-style: none;
+  padding: 0;
 }
 .blog-list li {
-  width: 45%;
-  float: left;
+  width: 100%;
 }
 .blog-card {
   border: solid 3px whitesmoke;
@@ -43,6 +48,8 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import { Context } from '@nuxt/types'
+import dayjs from 'dayjs'
 
 @Component
 export default class BlogList extends Vue {
@@ -76,14 +83,18 @@ export default class BlogList extends Vue {
     }
   }
 
-  async asyncData({ $content, params }: any) {
+  async asyncData({ $content, params, error }: Context) {
     const articles = await $content('articles', params.slug)
-      .only(['title', 'slug', 'body'])
       .sortBy('createdAt', 'asc')
       .fetch()
     return {
       articles,
+      error,
     }
+  }
+
+  date(createdAt: Date) {
+    return dayjs(createdAt).format('YYYY/MM/DD')
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="history">
-    <p> そのうち書く </p>
+    <p>そのうち書く</p>
   </div>
 </template>
 

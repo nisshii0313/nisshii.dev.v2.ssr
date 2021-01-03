@@ -1,12 +1,12 @@
 <template>
-  <article v-if="article">
+  <article>
     <div class="blog-title">
       <div>
-        <h1>{{ article.title }}</h1>
-        <p>{{ article.tag }}</p>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.tag }}</p>
       </div>
     </div>
-    <nuxt-content :document="article" />
+    <nuxt-content :document="post" />
     <div>
       <NuxtLink class="blog-link-to-top" to="/blog">
         <p>{{ '一覧へ' }}</p>
@@ -27,48 +27,51 @@
 </style>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue } from 'nuxt-property-decorator'
+import { Context } from '@nuxt/types'
 
-@Component
-export default class BlogArticle extends Vue {
+export default Vue.extend({
+  async asyncData({ $content, params, error }: Context) {
+    const query = $content('articles', params.slug)
+    const post = await query.fetch()
+    return { post, error }
+  },
   head() {
     return {
-      title: this.$data.article.title,
+      title: this.$data.post.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.$data.article.title + ' | にっしーのブログ',
+          content: this.$data.post.title + ' | にっしーのブログ',
         },
         { hid: 'og:type', property: 'og:type', content: 'article' },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: this.$data.article.title,
+          content: this.$data.post.title,
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.$data.article.title + ' | にっしーのブログ',
+          content: this.$data.post.title + ' | にっしーのブログ',
         },
         {
           hid: 'og:url',
           property: 'og:url',
           content:
-            "https://nisshii.dev" + '/blog/' + this.$data.article.slug + '/',
+            'https://nisshii.dev' + '/blog/' + this.$data.post.slug + '/',
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: (this.$data.article.body.children[0].children[0].props.src).replace("../../..", "https://clever-keller-803e9b.netlify.app"),
+          content: this.$data.post.body.children[0].children[0].props.src.replace(
+            '../../..',
+            'https://clever-keller-803e9b.netlify.app'
+          ),
         },
       ],
     }
-  }
-
-  async asyncData({ $content, params }: any) {
-    const article = await $content('articles', params.slug).fetch()
-    return { article }
-  }
-}
+  },
+})
 </script>
