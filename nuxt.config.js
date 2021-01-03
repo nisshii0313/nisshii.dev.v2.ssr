@@ -154,12 +154,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxt/content',
-    '@nuxtjs/markdownit',
   ],
-
-  markdownit: {
-    injected: true,
-  },
 
   hooks: {
     'generate:page': (page) => {
