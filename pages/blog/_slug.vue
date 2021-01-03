@@ -31,6 +31,11 @@ import { Vue } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
 
 export default Vue.extend({
+  async asyncData({ $content, params, error }: Context) {
+    const query = $content('articles', params.slug)
+    const post = await query.fetch()
+    return { post, error }
+  },
   head() {
     return {
       title: this.$data.post.title,
@@ -55,21 +60,18 @@ export default Vue.extend({
           hid: 'og:url',
           property: 'og:url',
           content:
-            "https://nisshii.dev" + '/blog/' + this.$data.post.slug + '/',
+            'https://nisshii.dev' + '/blog/' + this.$data.post.slug + '/',
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: (this.$data.post.body.children[0].children[0].props.src).replace("../../..", "https://clever-keller-803e9b.netlify.app"),
+          content: this.$data.post.body.children[0].children[0].props.src.replace(
+            '../../..',
+            'https://clever-keller-803e9b.netlify.app'
+          ),
         },
       ],
     }
   },
-
-  async asyncData({ $content, params, error }: Context) {
-    const query = $content('articles', params.slug);
-    const post = await query.fetch();
-    return { post };
-  }
 })
 </script>

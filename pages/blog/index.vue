@@ -5,7 +5,11 @@
       <li v-for="article of articles" :key="article.slug">
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
           <div class="blog-card">
-            <img width="1000" height="1000" :src="article.body.children[0].children[0].props.src" />
+            <img
+              width="1000"
+              height="1000"
+              :src="article.body.children[0].children[0].props.src"
+            />
             <h2>{{ article.title }}</h2>
             <p>{{ date(article.createdAt) }} | {{ article.readingTime }}</p>
           </div>
@@ -85,6 +89,7 @@ export default class BlogList extends Vue {
       .fetch()
     return {
       articles,
+      error,
     }
   }
 
