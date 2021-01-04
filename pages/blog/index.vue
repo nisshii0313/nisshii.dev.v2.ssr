@@ -23,6 +23,8 @@
 .blog-wrapper {
   margin-right: auto;
   margin-left: auto;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .blog-wrapper h1 {
   text-align: center;
@@ -43,6 +45,8 @@
 .blog-card img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  width: 100%;
+  height: auto;
 }
 </style>
 

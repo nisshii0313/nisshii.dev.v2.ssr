@@ -16,7 +16,6 @@
     "@nuxt/content": "^1.11.1",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/pwa": "^3.0.2",
     "core-js": "^3.6.5",
     "dayjs": "^1.8.31",
