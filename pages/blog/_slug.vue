@@ -9,7 +9,7 @@
     <nuxt-content :document="post" />
     <div>
       <NuxtLink class="blog-link-to-top" to="/blog">
-        <p>{{ '一覧へ' }}</p>
+        <p>{{ '一覧へ戻る' }}</p>
       </NuxtLink>
     </div>
   </article>
@@ -22,6 +22,25 @@
   margin-bottom: 16px;
 }
 .blog-link-to-top {
+  width: 100%;
+  text-align: center;
+}
+.blog-link-to-top p {
+  border: solid 3px whitesmoke;
+  box-sizing: content-box;
+  border-radius: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+</style>
+
+<style>
+.nuxt-content {
+  padding-right: 8px;
+  padding-left: 8px;
+  line-height: 150%
+}
+.nuxt-content img {
   width: 100%;
 }
 </style>
