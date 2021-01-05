@@ -11,7 +11,7 @@
               :src="article.body.children[0].children[0].props.src"
             />
             <h2>{{ article.title }}</h2>
-            <p>{{ date(article.createdAt) }} | {{ article.readingTime }}</p>
+            <p>{{ article.createdAt }} | {{ article.readingTime }}</p>
           </div>
         </NuxtLink>
       </li>
@@ -51,15 +51,14 @@
 </style>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue } from 'vue-property-decorator'
 import { Context } from '@nuxt/types'
 import dayjs from 'dayjs'
 
-@Component
-export default class BlogList extends Vue {
+export default Vue.extend({
   head() {
     return {
-      title: 'にっしーのブログ',
+      title: 'ぼうけんの書',
       meta: [
         {
           hid: 'description',
@@ -67,7 +66,7 @@ export default class BlogList extends Vue {
           content: '徒然なるままに日暮らす',
         },
         { hid: 'og:type', property: 'og:type', content: 'article' },
-        { hid: 'og:title', property: 'og:title', content: 'にっしーのブログ' },
+        { hid: 'og:title', property: 'og:title', content: 'ぼうけんの書' },
         {
           hid: 'og:description',
           property: 'og:description',
@@ -85,20 +84,19 @@ export default class BlogList extends Vue {
         },
       ],
     }
-  }
+  },
 
   async asyncData({ $content, params, error }: Context) {
     const articles = await $content('articles', params.slug)
       .sortBy('createdAt', 'asc')
       .fetch()
+    articles.map((item: any) => {
+      item.createdAt = dayjs(item.createdAt).format('YYYY/MM/DD')
+    })
     return {
       articles,
       error,
     }
   }
-
-  date(createdAt: Date) {
-    return dayjs(createdAt).format('YYYY/MM/DD')
-  }
-}
+})
 </script>
