@@ -154,7 +154,14 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxt/content',
+    '@nuxtjs/markdownit',
   ],
+
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true
+  },
 
   hooks: {
     'generate:page': (page) => {
@@ -179,5 +186,11 @@ export default {
   build: {
     analyze: false,
     parallel: true,
+    extend(config, _ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        use: ['raw-loader']
+      });
+    }
   },
 }
