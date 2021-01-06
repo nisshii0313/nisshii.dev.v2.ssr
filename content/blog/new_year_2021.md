@@ -8,7 +8,6 @@ images:
   - url: images/uploads/akabeko.png
     alt: akabeko
 ---
-
 ## 目次
 
 * はじめに
