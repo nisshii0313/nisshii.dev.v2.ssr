@@ -19,11 +19,9 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "date",format: "YYYY-MM-DD"}
-      - {label: "Modified", name: "modified", widget: "string", required: false}
       - {label: "Category", name: "category", widget: "string"}
       - {label: "tag", name: "tag", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Related", name: "related_post", widget: "string", required: false}
       - name: images
         label: "Images"
         label_singular: "Image"

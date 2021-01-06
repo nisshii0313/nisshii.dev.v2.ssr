@@ -179,5 +179,10 @@ export default {
   build: {
     analyze: false,
     parallel: true,
+    extend(config, _ctx) {
+      config.node = {
+        fs: 'empty',
+      }
+    },
   },
 }
