@@ -36,7 +36,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: 'https://clever-keller-803e9b.netlify.app/logo.png',
+          content: 'https://nisshii.netlify.app/logo.png',
         },
         {
           hid: 'twitter:card',
