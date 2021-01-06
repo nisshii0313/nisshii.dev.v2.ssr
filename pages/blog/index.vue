@@ -8,7 +8,7 @@
             <img
               width="1000"
               height="1000"
-              :src="article.body.children[0].children[0].props.src"
+              :src="article.images[0].url"
             />
             <h2>{{ article.title }}</h2>
             <p>{{ article.createdAt }} | {{ article.readingTime }}</p>

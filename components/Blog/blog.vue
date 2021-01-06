@@ -1,6 +1,7 @@
 <template>
   <div>
-    <nuxt-content :document="content" />
+    <img class="lazyload" :data-src="content.images[0].url" :alt="content.images[0].alt" >
+    <div class="blog-main" v-html="content.html"></div>
   </div>
 </template>
 
@@ -24,7 +25,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component
 export default class Blog extends Vue {
-    @Prop({ type: Object, required: true })
-    content;
+  @Prop({ type: Object, required: true })
+  content;
 }
 </script>
