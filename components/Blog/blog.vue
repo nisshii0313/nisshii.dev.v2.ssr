@@ -1,12 +1,15 @@
 <template>
-  <div>
+  <div class="blog-main">
     <img
+      width="1000"
+      height="1000"
       class="lazyload"
-      :data-src="content.images[0].url"
+      :src="img"
+      :data-src="img"
       :alt="content.images[0].alt"
     />
     <!-- eslint-disable-next-line vue/no-v-html -->
-    <div class="blog-main" v-html="content.html"></div>
+    <div v-html="content.html"></div>
   </div>
 </template>
 
@@ -18,6 +21,7 @@
 }
 .blog-main img {
   width: 100%;
+  height: auto;
 }
 .blog-main a:link {
   color: #0000ff;
@@ -26,10 +30,10 @@
   color: #000080;
 }
 .blog-main a:hover {
-  color: #ff0000;
+  color: #ff3c00;
 }
 .blog-main a:active {
-  color: #ff8000;
+  color: #ffa600;
 }
 </style>
 
@@ -40,5 +44,10 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 export default class Blog extends Vue {
   @Prop({ type: Object, required: true })
   content
+
+  get img() {
+    const src = require(`static/${this.content.images[0].url}`);
+    return src;
+  }
 }
 </script>
