@@ -45,7 +45,8 @@ export default class Blog extends Vue {
   content
 
   get img() {
-    src = require('static/' + content.images[0].url)
+    src = require('static/' + this.content.images[0].url)
+    return src;
   }
 }
 </script>
