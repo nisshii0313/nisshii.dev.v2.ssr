@@ -1,6 +1,8 @@
 <template>
   <div>
     <img
+      width="1000"
+      height="1000"
       class="lazyload"
       :data-src="'/' + content.images[0].url"
       :alt="content.images[0].alt"
@@ -18,6 +20,7 @@
 }
 .blog-main img {
   width: 100%;
+  height: auto;
 }
 .blog-main a:link {
   color: #0000ff;
