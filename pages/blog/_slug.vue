@@ -6,7 +6,7 @@
         <p>{{ post.tag }}</p>
       </div>
     </div>
-    <div v-html="post.html"></div>
+    <Blog :content="post" />
     <div>
       <NuxtLink class="blog-link-to-top" to="/blog">
         <p>{{ '一覧へ戻る' }}</p>
@@ -34,39 +34,16 @@
 }
 </style>
 
-<style>
-.nuxt-content {
-  padding-right: 8px;
-  padding-left: 8px;
-  line-height: 150%
-}
-.nuxt-content img {
-  width: 100%;
-}
-.nuxt-content a:link { color: #0000ff; }
-.nuxt-content a:visited { color: #000080; }
-.nuxt-content a:hover { color: #ff0000; }
-.nuxt-content a:active { color: #ff8000; }
-</style>
-
 <script>
-import { Vue } from 'nuxt-property-decorator'
-
-const fm = require("front-matter")
-const md = require("markdown-it")({
-  html: true,
-  linkify: true,
-  breaks: false,
-})
+import { Vue } from 'vue-property-decorator'
 
 export default Vue.extend({
-  async asyncData({ $content, params, error }) {
-    const query = $content('articles', params.slug)
-    const post = await query.fetch()
-    const fileContent = await import(`../../content/articles/${params.slug}.md`);
-    const res = fm(fileContent.default);
-    post.html = md.render(res.body);
-    return { post, error }
+  async asyncData({ $content, params, _error }) {
+    const query = $content('blog', params.slug);
+    const post = await query.fetch();
+    return {
+      post
+    }
   },
   head() {
     return {

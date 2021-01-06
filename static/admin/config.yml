@@ -11,7 +11,8 @@ public_folder: "images/uploads"
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "content/articles"
+    folder: "content/blog"
+    format: "frontmatter"
     create: true
     slug: "{{fields.slug}}"
     identifier_field: title

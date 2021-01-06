@@ -52,7 +52,6 @@
 
 <script lang="ts">
 import { Vue } from 'vue-property-decorator'
-import { Context } from '@nuxt/types'
 import dayjs from 'dayjs'
 
 export default Vue.extend({
@@ -86,8 +85,8 @@ export default Vue.extend({
     }
   },
 
-  async asyncData({ $content, params, error }: Context) {
-    const articles = await $content('articles', params.slug)
+  async asyncData({ $content, params, _error }: any) {
+    const articles = await $content('blog', params.slug)
       .sortBy('createdAt', 'asc')
       .fetch()
     articles.map((item: any) => {
@@ -95,7 +94,6 @@ export default Vue.extend({
     })
     return {
       articles,
-      error,
     }
   }
 })
