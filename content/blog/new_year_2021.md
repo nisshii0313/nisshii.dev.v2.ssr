@@ -5,8 +5,17 @@ category: ポエム
 tag: ポエム
 slug: new_year_2021
 related_post: ""
+images:
+  - url: images/uploads/akabeko.png
+    alt: akabeko
 ---
-![akabeko](../../../images/uploads/akabeko.png)
+
+
+![]()
+
+```
+
+```
 
 ## 目次
 
