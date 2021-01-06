@@ -87,7 +87,7 @@ export default Vue.extend({
         {
           hid: 'og:image',
           property: 'og:image',
-          content: 'https://clever-keller-803e9b.netlify.app/blog.png',
+          content: 'https://nisshii.netlify.app/blog.png',
         },
         {
           hid: 'twitter:card',
