@@ -5,7 +5,7 @@
       <li v-for="article of articles" :key="article.slug">
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
           <div class="blog-card">
-            <img width="1000" height="1000" :src="article.images[0].url" />
+            <img class="lazyload" width="1000" height="1000" :src="require(article.images[0].url)" :data-src="require(article.images[0].url)" />
             <h2>{{ article.title }}</h2>
             <p>{{ article.createdAt }} | {{ article.readingTime }}</p>
           </div>
