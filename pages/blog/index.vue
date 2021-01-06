@@ -5,7 +5,7 @@
       <li v-for="article of articles" :key="article.slug">
         <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
           <div class="blog-card">
-            <img width="1000" height="1000" :src="article.images[0].url" />
+            <img class="lazyload" width="1000" height="1000" :src="article.image" :data-src="article.image" :alt="article.images[0].alt" />
             <h2>{{ article.title }}</h2>
             <p>{{ article.createdAt }} | {{ article.readingTime }}</p>
           </div>
@@ -57,6 +57,7 @@ export default Vue.extend({
       .fetch()
     articles.map((item: any) => {
       item.createdAt = dayjs(item.createdAt).format('YYYY/MM/DD')
+      item.image = require(`static/${item.images[0].url}`)
     })
     return {
       articles,
@@ -88,6 +89,11 @@ export default Vue.extend({
           property: 'og:image',
           content: 'https://clever-keller-803e9b.netlify.app/blog.png',
         },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        }
       ],
     }
   },
