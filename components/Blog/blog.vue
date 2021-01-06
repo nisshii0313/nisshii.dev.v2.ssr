@@ -24,10 +24,10 @@
   height: auto;
 }
 .blog-main a:link {
-  color: #0000ff;
+  color: #008cff;
 }
 .blog-main a:visited {
-  color: #000080;
+  color: #0b67a5;
 }
 .blog-main a:hover {
   color: #ff3c00;

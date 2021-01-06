@@ -88,6 +88,11 @@ export default Vue.extend({
           property: 'og:image',
           content: 'https://clever-keller-803e9b.netlify.app/blog.png',
         },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        }
       ],
     }
   },
