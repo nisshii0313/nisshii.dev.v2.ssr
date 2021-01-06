@@ -38,17 +38,17 @@
 import { Vue } from 'vue-property-decorator'
 const fs = require('fs')
 const fm = require('front-matter')
-const marked = require("marked");
+const marked = require('marked')
 
 export default Vue.extend({
   async asyncData({ $content, params, _error }) {
-    const query = $content('blog', params.slug);
-    const post = await query.fetch();
-    const file = fs.readFileSync(`content/blog/${params.slug}.md`, 'utf8');
-    post.html = marked(fm(file).body);
-    post.html = marked(fm(file).body);
+    const query = $content('blog', params.slug)
+    const post = await query.fetch()
+    const file = fs.readFileSync(`content/blog/${params.slug}.md`, 'utf8')
+    post.html = marked(fm(file).body)
+    post.html = marked(fm(file).body)
     return {
-      post
+      post,
     }
   },
   head() {
@@ -81,7 +81,8 @@ export default Vue.extend({
           hid: 'og:image',
           property: 'og:image',
           content:
-            'https://clever-keller-803e9b.netlify.app' + this.$data.post.images[0].url,
+            'https://clever-keller-803e9b.netlify.app' +
+            this.$data.post.images[0].url,
         },
       ],
     }
