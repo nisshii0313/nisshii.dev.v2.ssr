@@ -81,7 +81,7 @@ export default Vue.extend({
           hid: 'og:image',
           property: 'og:image',
           content:
-            'https://clever-keller-803e9b.netlify.app' +
+            'https://clever-keller-803e9b.netlify.app/' +
             this.$data.post.images[0].url,
         },
       ],
