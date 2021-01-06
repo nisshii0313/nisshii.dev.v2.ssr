@@ -4,7 +4,7 @@
       width="1000"
       height="1000"
       class="lazyload"
-      :data-src="'/' + content.images[0].url"
+      :data-src="img"
       :alt="content.images[0].alt"
     />
     <!-- eslint-disable-next-line vue/no-v-html -->
@@ -43,5 +43,9 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 export default class Blog extends Vue {
   @Prop({ type: Object, required: true })
   content
+
+  get img() {
+    src = require('static/' + content.images[0].url)
+  }
 }
 </script>
