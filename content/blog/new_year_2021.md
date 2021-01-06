@@ -1,6 +1,6 @@
 ---
 title: ことよろ
-date: 2021-01-04
+date: 2021-01-06
 category: ポエム
 tag: ポエム
 slug: new_year_2021
