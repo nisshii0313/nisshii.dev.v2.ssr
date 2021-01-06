@@ -2,7 +2,7 @@
   <div>
     <img
       class="lazyload"
-      :data-src="content.images[0].url"
+      :data-src="'/' + content.images[0].url"
       :alt="content.images[0].alt"
     />
     <!-- eslint-disable-next-line vue/no-v-html -->
