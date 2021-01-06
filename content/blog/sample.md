@@ -6,8 +6,8 @@ category: sample
 tag: sample
 slug: sample
 ---
+![mazoku](images/uploads/mazoku.jpg)
+
 sample page
-
-
 
 aaaaa
