@@ -22,7 +22,7 @@ export default {
           content: 'nisshiiのnisshiiによるnisshiiのためのポートフォリオ兼ブログ',
         },
         { hid: 'og:type', property: 'og:type', content: 'article' },
-        { hid: 'og:title', property: 'og:title', content: 'ぼうけんの書' },
+        { hid: 'og:title', property: 'og:title', content: "nisshii's portfolio" },
         {
           hid: 'og:description',
           property: 'og:description',
@@ -42,7 +42,12 @@ export default {
           hid: 'twitter:card',
           property: 'twitter:card',
           content: 'summary_large_image'
-        }
+        },
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: 'https://nisshii.dev/skills',
+        },
       ],
     }
   },
