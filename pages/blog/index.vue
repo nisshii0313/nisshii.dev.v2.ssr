@@ -46,16 +46,16 @@
 }
 </style>
 
-<script lang="ts">
+<script>
 import { Vue } from 'vue-property-decorator'
 import dayjs from 'dayjs'
 
 export default Vue.extend({
-  async asyncData({ $content, params, _error }: any) {
+  async asyncData({ $content, params, _error }) {
     const articles = await $content('blog', params.slug)
       .sortBy('createdAt', 'asc')
       .fetch()
-    articles.map((item: any) => {
+    articles.map((item) => {
       item.createdAt = dayjs(item.createdAt).format('YYYY/MM/DD')
       item.image = require(`static/${item.images[0].url}`)
     })
@@ -93,7 +93,12 @@ export default Vue.extend({
           hid: 'twitter:card',
           property: 'twitter:card',
           content: 'summary_large_image'
-        }
+        },
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: 'https://nisshii.dev' + '/blog/',
+        },
       ],
     }
   },

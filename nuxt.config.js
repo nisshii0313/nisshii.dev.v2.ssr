@@ -18,7 +18,6 @@ export default {
       },
     ],
     link: [
-      { hid: 'canonical', rel: 'canonical', href: 'https://nisshii.dev' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         hid: 'destyle',

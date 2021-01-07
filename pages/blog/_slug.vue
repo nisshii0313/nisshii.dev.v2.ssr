@@ -88,7 +88,12 @@ export default Vue.extend({
           hid: 'twitter:card',
           property: 'twitter:card',
           content: 'summary_large_image'
-        }
+        },
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: 'https://nisshii.dev' + '/blog/' + this.$data.post.slug + '/',
+        },
       ],
     }
   },
