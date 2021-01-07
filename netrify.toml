@@ -1,5 +1,0 @@
-[[redirects]]
-from = "/*"
-to = "https://nisshii.dev/:splat"
-status = 301
-force = true
