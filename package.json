@@ -18,7 +18,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.2",
-    "core-js": "^3.6.5",
+    "core-js": "^3.9.1",
     "dayjs": "^1.8.31",
     "dotenv": "^8.2.0",
     "front-matter": "^4.0.2",
